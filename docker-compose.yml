@@ -1,4 +1,4 @@
-version: "3.1"
+version: "3"
 
 services:
   api:
@@ -13,12 +13,12 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     restart: always
 
-  frontend:
+  web:
     image: torimbj/hng9:devops-django-react-task_web
     build:
       context: ./frontend
       dockerfile: ./frontend/Dockerfile
-    ports: 
+    ports:
       - "3000:3000"
     volumes:
       - ./frontend:/frontend
